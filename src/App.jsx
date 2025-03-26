@@ -1,21 +1,12 @@
-import { getMethod } from "./utils/PostApi";
-import React, { useEffect } from "react"
+import Posts from "./components/Posts"
+import './App.css'
 function App() {
-  console.log(getMethod());
-
-  const getData=async()=>{
-    const res=await getMethod();
-    console.log(res.data);
-  }
-
-  useEffect(()=>{
-    getData();
-  },[])
-
 
   return (
     <>
-    <h1>Hey</h1>
+    <section>
+      <Posts/>
+    </section>
     </>
   )
 }

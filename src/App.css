@@ -11,7 +11,7 @@ body{
     width: 90vw;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 3vh;
 }
 
 

@@ -22,7 +22,7 @@ const Posts = () => {
             {Data.map((data)=>{
                 const {id,title,body}=data;
                 return (
-                    <li key={id} className='bg-slate-700 h-[30vh] w-[60vh] p-2 flex text-white flex-col justify-between rounded-lg'>
+                    <li key={id} className='bg-slate-700 h-[30vh] w-[60vh] p-2 flex text-white flex-col justify-between rounded-lg hover:bg-slate-600 hover:scale-105 transition ease-in-ease-out duration-150'>
                         <h2 className='font-semibold'>Title:{title}</h2>
                         <p>{body}</p>
                         <div className='flex items-center justify-start'>

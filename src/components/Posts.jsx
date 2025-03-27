@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { deleteMethod, getMethod } from '../utils/PostApi';
 import { useState } from 'react';
+import Form from './Form';
 const Posts = () => {
     const [Data, setData] = useState([])
 
@@ -35,6 +36,9 @@ const Posts = () => {
   return (
     <>
     <section className='section-container'>
+        <div className='h-[10vh] w-screen'>
+            <Form data={Data} setData={setData}/>
+        </div>
         <ol className='lists mx-auto mt-10'>
             {Data.map((data)=>{
                 const {id,title,body}=data;

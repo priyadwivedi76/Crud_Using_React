@@ -13,3 +13,7 @@ export const getMethod=()=>{
 export const deleteMethod=(id)=>{
     return instance.delete(`/posts/${id}`)
 }
+
+export const postData=(posts)=>{
+    return instance.post('/posts',posts)
+}

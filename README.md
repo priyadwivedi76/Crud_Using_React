@@ -1,12 +1,52 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CRUD_OPERTION_USING_API
 
-Currently, two official plugins are available:
+This project is designed to perform CRUD operations on a remote API. It allows users to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Create new data entries,
 
-## Expanding the ESLint configuration
+Read existing data,
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Update data, and
+
+Delete data entries.
+
+
+
+## Tech Stack
+
+**Client:** React, Redux, TailwindCSS
+
+**API**: https://jsonplaceholder.typicode.com/posts
+
+**Environment**: Vercel (or other platforms for deployment)
+
+
+
+## Features
+
+- Create Post
+- Update Post
+- Read Post
+- Delete Post
+
+
+## Contributing
+
+Contributions are always welcome!
+
+**Steps to contribute:**
+
+1.Fork this repository.
+
+2.Create a new branch (git checkout -b feature-name).
+
+3.Commit your changes (git commit -am 'Add new feature').
+
+4.Push to the branch (git push origin feature-name).
+
+5.Open a pull request.
+
+
+
+

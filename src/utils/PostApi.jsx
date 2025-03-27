@@ -9,3 +9,7 @@ export default instance;
 export const getMethod=()=>{
     return instance.get('/posts')
 }
+
+export const deleteMethod=(id)=>{
+    return instance.delete(`/posts/${id}`)
+}

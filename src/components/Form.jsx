@@ -34,6 +34,12 @@ const Form = ({data,setData,setUpdatedPost,updatedPost}) => {
                         return current.id === res.data.id ? res.data : current
                     })
                 })
+                setpost({
+                    title:'',
+                    body:''
+                })
+
+                setUpdatedPost({})
             }
         }catch(e){
             console.log("error")

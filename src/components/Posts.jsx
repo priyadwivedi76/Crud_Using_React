@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Form from './Form';
 const Posts = () => {
     const [Data, setData] = useState([])
+    const [updatedPost,setUpdatedPost]=useState([]);
 
     const getMethodData=async()=>{
         const res=await getMethod();
@@ -32,12 +33,14 @@ const Posts = () => {
         }
     }
 
+    const handleUpdata=(current)=>setUpdatedPost(current);
+
 
   return (
     <>
     <section className='section-container'>
         <div className='h-[10vh] w-screen'>
-            <Form data={Data} setData={setData}/>
+            <Form data={Data} setData={setData} updatedPost={updatedPost} setUpdatedPost={setUpdatedPost}/>
         </div>
         <ol className='lists mx-auto mt-10'>
             {Data.map((data)=>{
@@ -48,7 +51,7 @@ const Posts = () => {
                         <h2 className='font-semibold'>Title:{title}</h2>
                         <p>{body}</p>
                         <div className='flex items-center justify-start'>
-                            <button className='Edit'>Edit</button>
+                            <button className='Edit' onClick={()=>handleUpdata(data)}>Edit</button>
                             <button className='Delete' onClick={()=>handleClick(id)}>Delete</button>
                         </div>
                     </li>

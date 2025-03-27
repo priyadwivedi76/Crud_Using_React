@@ -33,7 +33,7 @@ const Posts = () => {
         }
     }
 
-    const handleUpdata=(current)=>setUpdatedPost(current);
+    const handleUpdate=(current)=>setUpdatedPost(current);
 
 
   return (
@@ -51,7 +51,7 @@ const Posts = () => {
                         <h2 className='font-semibold'>Title:{title}</h2>
                         <p>{body}</p>
                         <div className='flex items-center justify-start'>
-                            <button className='Edit' onClick={()=>handleUpdata(data)}>Edit</button>
+                            <button className='Edit' onClick={()=>handleUpdate(data)}>Edit</button>
                             <button className='Delete' onClick={()=>handleClick(id)}>Delete</button>
                         </div>
                     </li>

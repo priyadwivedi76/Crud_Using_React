@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { postData } from '../utils/PostApi'
+import { postData, updatedData } from '../utils/PostApi'
 import { useState } from 'react'
 const Form = ({data,setData,setUpdatedPost,updatedPost}) => {
     const [post, setpost] = useState({
@@ -24,9 +24,30 @@ const Form = ({data,setData,setUpdatedPost,updatedPost}) => {
         console.log("res",res)
     }
 
+    const updatePostData=async()=>{
+        try{
+            const res=await updatedData(post,updatedPost.id)
+            console.log("res",res.data)
+            if(res.status===200){
+                setData((prev)=>{
+                    return prev.map((current)=>{
+                        return current.id === res.data.id ? res.data : current
+                    })
+                })
+            }
+        }catch(e){
+            console.log("error")
+        }
+    }
+
     const handleFormSubmit=(e)=>{
         e.preventDefault();
-        addPostData();
+        const action=e.nativeEvent.submitter.value
+        if(action=='Add'){
+            addPostData();
+        }else{
+            updatePostData();
+        }
     }
 
     const isEmpty=Object.keys(updatedPost).length === 0;

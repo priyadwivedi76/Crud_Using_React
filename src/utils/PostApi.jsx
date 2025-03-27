@@ -17,3 +17,7 @@ export const deleteMethod=(id)=>{
 export const postData=(posts)=>{
     return instance.post('/posts',posts)
 }
+
+export const updatedData=(post,id)=>{
+    return instance.put(`/posts/${id}`,post)
+}

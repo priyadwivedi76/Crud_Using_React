@@ -29,6 +29,8 @@ const Form = ({data,setData,setUpdatedPost,updatedPost}) => {
         addPostData();
     }
 
+    const isEmpty=Object.keys(updatedPost).length === 0;
+
     useEffect(()=>{
         updatedPost && setpost({
             title:updatedPost.title || "",
@@ -40,7 +42,7 @@ const Form = ({data,setData,setUpdatedPost,updatedPost}) => {
    <form className='flex items-center justify-center gap-10 py-4' onSubmit={handleFormSubmit}>
     <input type="text" name='title' onChange={handleChange} value={post.title} placeholder='Title' className='h-10 w-56 border bg-white outline-none text-gray-500 px-2 font-semibold rounded-md' />
     <input type="text" name='body' onChange={handleChange} placeholder='Body' value={post.body} className='h-10 w-56 border outline-none bg-white text-gray-500 px-2 font-semibold rounded-md'/>
-    <button type='submit' className='bg-cyan-500 px-10 rounded-md hover:text-white py-2'>Submit</button>
+    <button type='submit' value={isEmpty ? 'Add' : 'Edit'} className='bg-cyan-500 px-10 rounded-md hover:text-white py-2'>{isEmpty ? 'Add':'Edit'}</button>
    </form>
    </>
   )
